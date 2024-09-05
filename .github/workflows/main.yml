@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: jakejarvis/s3-sync-action@master
         with:
-          args: --delete --exclude-from ".s3ignore"
+          args: --delete 
         env:
           AWS_S3_BUCKET: mykyta-nemov-task-bucket
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
