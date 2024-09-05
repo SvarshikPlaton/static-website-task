@@ -6,16 +6,13 @@ on:
     - main
 
 jobs:
-  deploy-site:
+  upload:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: jakejarvis/s3-sync-action@master
+      - uses: actions/checkout@master
+      - uses: shallwefootball/s3-upload-action@master
         with:
-          args: --delete
-        env:
-          AWS_S3_BUCKET: mykyta-nemov-task-bucket
-          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
-          SOURCE_DIR: ./main\
-          
+          aws_key_id: ${{ secrets.ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.SECRET_ACCESS_KEY }}
+          aws_bucket: mykyta-nemov-task-bucket
+          source_dir: ./main\
