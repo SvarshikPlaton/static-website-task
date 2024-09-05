@@ -17,4 +17,4 @@ jobs:
           AWS_S3_BUCKET: mykyta-nemov-task-bucket
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
-          SOURCE_DIR: ./
+          SOURCE_DIR: ./static
